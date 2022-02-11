@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <a id="start">Start</a> |
+    
+    <a id="stop">Stop</a>
+    <div id="container">
+        
+    </div>
+
+    <script>
+        const conteiner = document.getElementById("container")
+        const satrt = document.getElementById("start");
+        const finish = document.getElementById("stop")
+
+        satrt.style.cursor ='pointer ';
+        finish.style.cursor ='pointer ';
+
+        
+
+        const rondomWords = () => Math.floor(Math.random() * 20 + 1);
+
+           const boss = function (){
+             const task = document.createElement("div")
+             task.className = "element"
+             task.innerHTML = rondomWords();
+             conteiner.append(task);
+           }
+
+           const shoeMessage = () =>{
+               const time = setInterval (boss, 3000);
+               finish.addEventListener( "click", ()=>{
+                  clearInterval (time);
+               });
+           }
+            satrt.addEventListener( "click", () => {
+                shoeMessage();
+
+           } );
+        
+
+    </script>
+</body>
+</html>

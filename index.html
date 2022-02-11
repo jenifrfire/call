@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <button id="btn" >Оствит зоявку</button>
+ 
+    <script>
+        const square = function () {
+        const task = document.createElement("div")
+        task.style.width = "1500px"
+        task.style.height = "1500px"
+        task.style.backgroundColor = "grey"
+        task.style.position = "relative"
+
+        const lask = document.createElement("div")
+        lask.style.width = "150px"
+        lask.style.height = "100px"
+        lask.style.backgroundColor = "black"
+        lask.style.padding = " 5% 21%"
+        lask.style.position = "absolute"
+        lask.style.top = "10%"
+        lask.style.left = "22.9%"
+
+        const mask = document.createElement("p")
+        mask.innerHTML = "оставте заявку"
+        mask.style.fontFamily = "Montserrat"
+        mask.style.fontSize = "20px"
+        mask.style.color = "white"
+        mask.style.textAlign = "center"
+
+        
+        const  vask = document.createElement("input")
+        vask.style.width = "190px"
+        vask.style.height = "25px"
+
+ 
+        const item = document.createElement("button")
+        item.innerHTML = "&times;"
+        item.style.width = "70px"
+        item.style.height = "50px"
+        item.style.color = "red"
+        item.style.position = "absolute"   
+        item.style.top = "10%"
+        item.style.left = "70.5%"
+        item.addEventListener( "click", () =>{
+           document.body.remove(task);
+        } );
+
+        
+        document.body.append(task);
+        task.append(lask);
+        lask.append(mask);
+        mask.append(vask)
+        task.append(item)
+
+
+     
+
+        }
+        // square();
+        const butom = document.getElementById("btn")
+        butom.addEventListener("click", () =>{
+             square();
+        } )
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
